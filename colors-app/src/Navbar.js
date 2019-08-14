@@ -1,53 +1,86 @@
-import React, { Component } from 'react'
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/styles";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from '@material-ui/icons/Close';
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+import "./Navbar.css";
+// import styles from "./styles/NavbarStyles";
 
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
-import './Navbar.css';
-
-export class Navbar extends Component {
-
-    state = {
-        format: "hex"
+class Navbar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { format: "hex", open: false };
+        this.handleFormatChange = this.handleFormatChange.bind(this);
+        this.closeSnackbar = this.closeSnackbar.bind(this);
     }
-
-    changeFormat = (e) => {
-        this.setState({ format: e.target.value },()=>{this.props.handleChange(this.state.format)});
+    handleFormatChange(e) {
+        this.setState({ format: e.target.value, open: true });
+        this.props.handleChange(e.target.value);
     }
-
+    closeSnackbar() {
+        this.setState({ open: false });
+    }
     render() {
         const { level, changeLevel } = this.props;
+        const showingAllColors=true;
         const { format } = this.state;
         return (
-
             <header className="Navbar">
                 <div className="logo">
-                    <a href="#">react-to-color-picker</a>
+                    <Link to='/'>reactcolorpicker</Link>
                 </div>
-                <div className="slider-container">
-                    <span>Level: {level}</span>
-                    <div className="slider">
-                        <Slider defaultValue={level} step={100} min={100} max={900} onAfterChange={changeLevel} />
+                {showingAllColors && (
+                    <div>
+                        <span>Level: {level}</span>
+                        <div className="slider">
+                            <Slider
+                                defaultValue={level}
+                                min={100}
+                                max={900}
+                                step={100}
+                                onAfterChange={changeLevel}
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className="select-container">
-                    <Select
-                        value={format}
-                        onChange={this.changeFormat}
-                        inputProps={{
-                            name: 'age',
-                            id: 'age-simple',
-                        }}
-                    >
-                        <MenuItem value={'hex'}>#ffffff</MenuItem>
-                        <MenuItem value={'rgb'}>rgb(255,255,255,0)</MenuItem>
-                        <MenuItem value={'rgba'}>rgba(255,255,255,0)</MenuItem>
+                )}
+                <div className="selectContainer">
+                    <Select value={format} onChange={this.handleFormatChange}>
+                        <MenuItem value='hex'>HEX - #ffffff</MenuItem>
+                        <MenuItem value='rgb'>RGB - rgb(255,255,255)</MenuItem>
+                        <MenuItem value='rgba'>RGBA - rgba(255,255,255, 1.0)</MenuItem>
                     </Select>
                 </div>
+                <Snackbar
+                    anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+                    open={this.state.open}
+                    autoHideDuration={3000}
+                    message={
+                        <span id='message-id'>
+                            Format Changed To {format.toUpperCase()}
+                        </span>
+                    }
+                    ContentProps={{
+                        "aria-describedby": "message-id"
+                    }}
+                    onClose={this.closeSnackbar}
+                    action={[
+                        <IconButton
+                            onClick={this.closeSnackbar}
+                            color='inherit'
+                            key='close'
+                            aria-label='close'
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    ]}
+                />
             </header>
-        )
+        );
     }
 }
-
-export default Navbar
+export default Navbar;
