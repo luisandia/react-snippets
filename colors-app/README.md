@@ -1,4 +1,4 @@
-https://color-react-ls.herokuapp.com/
+<a href="https://color-react-ls.herokuapp.com/" target="_blank">See the result here</a>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
