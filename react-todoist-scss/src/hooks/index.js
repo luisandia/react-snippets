@@ -42,7 +42,7 @@ export const useProjects = () => {
 
 
   useEffect(() => {
-    firebase.firestore().collection('projects').where('userId', '==', 'vlaFdfKwiM1NconVBCUY').orderBy('projectId').get().then(
+    firebase.firestore().collection('projects').where('userId', '==', 'vlaFdfKwiM1NconVBUHG').orderBy('projectId').get().then(
       snapshot => {
         const allProjects = snapshot.docs.map(project => ({
           ...project.data(),
