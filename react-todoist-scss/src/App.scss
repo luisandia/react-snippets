@@ -304,7 +304,7 @@ header {
     &.active,
     &:hover {
       font-weight     : bold;
-      background-color: white;
+      background-color: white
     }
 
     &:nth-child(1) {
@@ -434,12 +434,12 @@ header {
   &__inner {
     @include box-overlay();
     z-index         : 99;
-    width           : 200px;
+    width           : 200px !important;
     padding         : 10px;
     top             : 10px;
     right           : 0;
     background-color: white;
-
+    flex-direction: column;
     p {
       margin-top   : 5px;
       margin-bottom: 5px;
