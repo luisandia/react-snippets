@@ -19,3 +19,7 @@ export const Checkbox = ({ id }) => {
   )
 
 };
+
+Checkbox.propTypes = {
+  id: PropTypes.string
+};
