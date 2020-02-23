@@ -5,11 +5,6 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
-const StyledLink = styled(Link)`
-  color:#eee;
-  text-decoration:none;
-
-`;
 export const StyledAppBar = styled(AppBar)`
     align-items:center;
 `;
@@ -18,15 +13,9 @@ export class Navbar extends Component {
     return (
       <StyledAppBar>
         <Toolbar >
-          <StyledLink to={'/login'}>
-            <Button color="inherit" >Login</Button>
-          </StyledLink>
-          <StyledLink to={'/'}>
-            <Button color="inherit">Home</Button>
-          </StyledLink>
-          <StyledLink to={'/signup'}>
-            <Button color="inherit">SignUp</Button>
-          </StyledLink>
+          <Button color="inherit" component={Link} to="/login" >Login</Button>
+          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" component={Link} to="/signup">SignUp</Button>
         </Toolbar>
       </StyledAppBar>
 

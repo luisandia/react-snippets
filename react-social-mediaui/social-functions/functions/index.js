@@ -5,6 +5,8 @@ const { signup, login, uploadImage, addUserDetails, getAuthenticatedUser, getUse
 const { db } = require('./utils/admin');
 const FBAuth = require('./utils/fbAuth');
 const app = express();
+const cors = require('cors');
+app.use(cors({ origin: true }));
 
 // scream routes
 app.get('/screams', getAllScreams);

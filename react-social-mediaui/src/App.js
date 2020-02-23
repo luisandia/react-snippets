@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 // pages
-import Home from './pages/Home';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
+import Home from './pages/home';
+import Signup from './pages/signup';
+import Login from './pages/login';
 import Navbar from './components/Navbar';
 
 const theme = createMuiTheme({
