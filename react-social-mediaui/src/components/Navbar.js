@@ -18,7 +18,7 @@ export class Navbar extends Component {
     return (
       <StyledAppBar>
         <Toolbar >
-          <StyledLink to={'/login'} style={{ color: "white", textDecoration: "none" }}>
+          <StyledLink to={'/login'}>
             <Button color="inherit" >Login</Button>
           </StyledLink>
           <StyledLink to={'/'}>
