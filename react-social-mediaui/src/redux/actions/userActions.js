@@ -1,4 +1,4 @@
-import { SET_USER, SET_ERRORS, SET_UNAUTHENTICATED, CLEAR_ERRORS, LOADING_UI } from '../types';
+import { SET_USER, SET_ERRORS, SET_UNAUTHENTICATED, CLEAR_ERRORS, LOADING_UI, LOADING_USER } from '../types';
 import axios from 'axios';
 
 
@@ -50,6 +50,7 @@ export const logoutUser = () => (dispatch) => {
 
 export const getUserData = () => (dispatch) => {
 
+  dispatch({ type: LOADING_USER });
   axios.get('/user').then(
     res => {
       dispatch({ type: SET_USER, payload: res.data })
@@ -57,7 +58,15 @@ export const getUserData = () => (dispatch) => {
   ).catch(err => console.error(err));
 
 }
-
+export const uploadImage = (formData) => (dispatch) => {
+  dispatch({ type: LOADING_USER });
+  axios
+    .post('/user/image', formData)
+    .then(() => {
+      dispatch(getUserData());
+    })
+    .catch((err) => console.log(err));
+};
 const setAuthorizationHeader = (token) => {
   const FBIdToken = `Bearer ${token}`;
   localStorage.setItem('FBIdToken', FBIdToken);
