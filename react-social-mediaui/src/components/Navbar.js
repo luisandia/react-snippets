@@ -56,8 +56,8 @@ Navbar.propTypes = {
   authenticated: PropTypes.bool.isRequired
 };
 
-const mapStateToProps = (state) => ({
-  authenticated: state.user.authenticated
+const mapStateToProps = ({ user: { authenticated } }) => ({
+  authenticated
 });
 
 export default connect(mapStateToProps)(Navbar);
