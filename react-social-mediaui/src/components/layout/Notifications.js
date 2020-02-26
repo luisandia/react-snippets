@@ -16,7 +16,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ChatIcon from '@material-ui/icons/Chat';
 // Redux
 import { connect } from 'react-redux';
-import { markNotificationsRead } from '../redux/actions/userActions';
+import { markNotificationsRead } from '../../redux/actions/userActions';
 
 class Notifications extends Component {
   state = {
@@ -75,7 +75,7 @@ class Notifications extends Component {
               {icon}
               <Typography
                 component={Link}
-                color="default"
+                color="initial"
                 variant="body1"
                 to={`/users/${not.recipient}/scream/${not.screamId}`}
               >

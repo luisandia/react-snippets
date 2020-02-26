@@ -14,7 +14,9 @@ import axios from 'axios';
 import Home from './pages/home';
 import Signup from './pages/signup';
 import Login from './pages/login';
-import Navbar from './components/Navbar';
+import user from './pages/user';
+
+import Navbar from './components/layout/Navbar';
 import themeFile from './util/theme';
 
 
@@ -45,6 +47,12 @@ function App() {
               <Route exact path="/" component={Home} />
               <AuthRoute exact path="/login" component={Login} />
               <AuthRoute exact path="/signup" component={Signup} />
+              <Route exact path="/users/:handle" component={user} />
+              <Route
+                exact
+                path="/users/:handle/scream/:screamId"
+                component={user}
+              />
             </Switch>
           </div>
         </Router>

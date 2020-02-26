@@ -209,7 +209,7 @@ exports.getUserDetails = (req, res) => {
         userData.screams.push({
           body: doc.data().body,
           createdAt: doc.data().createdAt,
-          userhandle: doc.data().userhandle,
+          userHandle: doc.data().userHandle,
           userImage: doc.data().userImage,
           likeCount: doc.data().likeCount,
           commentCount: doc.data().commentCount,
