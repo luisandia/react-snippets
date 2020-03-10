@@ -58,6 +58,9 @@ const ProductWrapper = styled.div`
         transform: scale(1.15);
         opacity: 0.2;
       }
+      .product-icons {
+        opacity: 1;
+      }
     }
   }
   .img-container {
@@ -78,9 +81,6 @@ const ProductWrapper = styled.div`
     color: var(--primaryColor);
     background: var(--mainBlack);
     border-radius: 0.5rem;
-  }
-  .card:hover .product-icons {
-    opacity: 1;
   }
   .card-body {
     font-weight: bold;
