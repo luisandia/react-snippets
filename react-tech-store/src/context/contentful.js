@@ -1,5 +1,5 @@
 import * as contentful from "contentful";
-
+console.log(process.env)
 export const client = contentful.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms
   space: process.env.REACT_APP_SPACE_ID,
