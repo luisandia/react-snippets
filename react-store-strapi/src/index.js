@@ -7,9 +7,11 @@ import { CartProvider } from "./context/cart";
 import { UserProvider } from "./context/user";
 
 ReactDOM.render(
-    <ProductProvider>
-        <App />
-    </ProductProvider>
+  <ProductProvider>
+    <CartProvider>
+      <App />
+    </CartProvider>
+  </ProductProvider>
 
   ,
 
