@@ -27,6 +27,15 @@
     },
     "featured": {
       "type": "boolean"
+    },
+    "free_shipping": {
+      "type": "boolean"
+    },
+    "extra_field": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
     }
   }
 }
