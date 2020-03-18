@@ -21,57 +21,10 @@ import MailIcon from '@material-ui/icons/Mail';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@material-ui/core';
 import { LayoutContext } from '../context/layoutCtx';
+import headerStyle from './headerStyle';
 
 
-const useStyles = makeStyles(theme => ({
-  show: {
-    width: '100%',
-    backgroundColor: 'var(--primaryColor)',
-    maxHeight: '0',
-    overflow: 'hidden',
-    position: 'absolute',
-    transition: 'max-height .2s ease-out',
-    '&.hidden': {
-      maxHeight: '500px',
-      transition: 'max-height .5s ease-in',
-    }
-  },
-  menuButton: {
-    padding: 0,
-    [theme.breakpoints.between('sm', 'xl')]: {
-      display: 'none',
-    },
-  },
-  title: {
-    flexGrow: 3,
-    fontWeight: 'bold',
-    "& .mytext": {
-      backgroundColor: 'var(--yellowColor)',
-      color: 'var(--primaryColor)'
-    },
-    [theme.breakpoints.between('xs', 'sm')]: {
-      fontSize: '1rem',
-      flexGrow: 1,
-    },
-  },
-  highlighted: {
-    backgroundColor: '#61ce70',
-    color: '#eee'
-  },
-  toolbar: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    [theme.breakpoints.between('md', 'xl')]: {
-      margin: '0 100px',
-    },
-  },
-  rightMenu: {
-    flexGrow: 1,
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  }
-}));
+const useStyles = makeStyles(headerStyle);
 
 function HideOnScroll(props) {
   const { children } = props;
@@ -82,6 +35,7 @@ function HideOnScroll(props) {
     </Slide>
   );
 }
+
 HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
 };

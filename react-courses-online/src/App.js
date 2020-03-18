@@ -34,6 +34,12 @@ const theme = createMuiTheme({
       backgroundColor: 'rgba(0, 0, 0, 0)'
     },
   },
+  general:{
+    highlighted: {
+      backgroundColor: '#61ce70',
+      color: '#eee'
+    },
+  }
 });
 function App() {
   return (
