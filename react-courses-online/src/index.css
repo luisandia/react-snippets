@@ -1,0 +1,19 @@
+:root {
+  /* --primaryColor    : #9e3aa3; */
+  /* --primaryDarkColor: #4e1d51; */
+  --primaryColor       : #fff;
+  --primaryDarkColor   : #c02c03;
+  --yellowColor        : #f2c309;
+}
+
+a {
+  text-decoration: none;
+  cursor         : pointer;
+  color          : #000;
+  margin-right   : 2rem;
+  font-weight    : bold;
+}
+
+.active {
+  color: var(--yellowColor);
+}
