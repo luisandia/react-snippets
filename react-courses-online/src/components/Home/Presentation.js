@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
   main: {
     position: 'relative',
     color: '#fff',
+    backgroundImage: `url(${Image})`,
     '&::before': {
       content: '""',
       position: 'absolute',
@@ -23,20 +24,12 @@ const useStyles = makeStyles(theme => ({
       opacity: '.65'
     },
   },
-  bannerImg: {
-    display: 'block', //para eliminar las franjas de la imagen ya que es inline
-    height: '595px',
-    backgroundSize: 'cover',
-    backgroundImage: `url(${Image})`
-  },
   bannerData: {
-    position: 'absolute',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap',
-    top: '16rem',
-    transform: 'translateY(-50%)'
+    padding: '6rem 0',
   },
   bannerTitle: {
     margin: '0 0 .5em',
@@ -47,12 +40,21 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
   },
   button: {
-    position: 'relative',
     padding: '10px 30px',
     fontSize: '16px',
-    marginBottom: '4rem'
+    marginTop: '1rem',
+    marginBottom: '4rem',
   },
-  card: { display: 'flex', flexDirection: 'column', padding: '0 64px', left: '15px', position: 'relative', alignItems: 'center', textAlign: 'center' },
+  card: {
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'relative',
+    alignItems: 'center',
+    textAlign: 'center',
+    [theme.breakpoints.between('sm', 'xl')]: {
+      marginLeft: '32px',
+    }
+  },
   icon: {
     padding: '10px',
     fontSize: '42px',
@@ -67,6 +69,15 @@ const useStyles = makeStyles(theme => ({
   },
   p: {
     color: '#fff'
+  },
+  container: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    flexDirection: 'column',
+    margin: '0 4rem',
+    [theme.breakpoints.between('sm', 'xl')]: {
+      flexDirection: 'row'
+    }
   }
 }));
 
@@ -74,25 +85,22 @@ const useStyles = makeStyles(theme => ({
 
 const Presentation = () => {
 
+  const { main, bannerData, bannerTitle, highlighted, button, card, icon, h1, p, container } = useStyles();
 
-  const { main, bannerImg, bannerData, bannerTitle, highlighted, button, card, icon, h1, p } = useStyles();
   return (
-
     <section className={main}>
-      <div className={bannerImg}></div>
       <div className={bannerData}>
         <h2 className={bannerTitle}>Explora, aprende, aplica</h2>
         <Link to='/'>
           <Button
             variant='contained'
             color='secondary'
-            className={`${highlighted} ${button}`}
-          >
+            className={`${highlighted} ${button}`}>
             Ver Planes
-              </Button>
+          </Button>
         </Link>
 
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <div className={container}>
           <div className={card}>
             <FontAwesomeIcon className={icon} icon={faSuitcase} />
             <h1 className={h1}>Crece como profesional</h1>

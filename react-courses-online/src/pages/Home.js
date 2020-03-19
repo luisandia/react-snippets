@@ -7,6 +7,7 @@ import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
 import Presentation from '../components/Home/Presentation';
+import BannerCourse from '../components/Home/BannerCourse';
 
 
 const useStyles = makeStyles(theme => ({
@@ -59,7 +60,11 @@ export const Home = (props) => {
   return (
     <>
     <Presentation/>
+    <BannerCourse/>
 
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
       <ScrollTop {...props}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">

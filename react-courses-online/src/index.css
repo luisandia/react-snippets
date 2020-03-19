@@ -4,6 +4,7 @@
   --primaryColor       : #fff;
   --primaryDarkColor   : #c02c03;
   --yellowColor        : #f2c309;
+  --highlighted:#61ce70;
 }
 
 a {
@@ -17,3 +18,5 @@ a {
 .active {
   color: var(--yellowColor);
 }
+
+@keyframes example { 0% { stroke-dasharray: 0 1500; } 15% { stroke-dasharray: 1500 1500; } 100% { stroke-dasharray: 1500 1500; } } 

@@ -109,7 +109,9 @@ export const Header = (props) => {
               }
             </div>
           </Toolbar>
-          {fullList(show)}
+          <div>
+            {fullList(show)}
+          </div>
         </AppBar>
       </HideOnScroll>
       <Toolbar id="back-to-top-anchor" />

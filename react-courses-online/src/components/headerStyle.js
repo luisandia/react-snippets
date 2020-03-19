@@ -33,9 +33,9 @@ const headerStyle = theme => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
-    [theme.breakpoints.between('md', 'xl')]: {
-      margin: '0 100px',
-    },
+    // [theme.breakpoints.between('md', 'xl')]: {
+    //   margin: '0 100px',
+    // },
   },
   rightMenu: {
     flexGrow: 1,

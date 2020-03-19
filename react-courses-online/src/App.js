@@ -36,7 +36,7 @@ const theme = createMuiTheme({
   },
   general:{
     highlighted: {
-      backgroundColor: '#61ce70',
+      backgroundColor: 'var(--highlighted)',
       color: '#eee'
     },
   }
