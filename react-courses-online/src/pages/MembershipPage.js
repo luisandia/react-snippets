@@ -6,8 +6,9 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
-import Presentation from '../components/Home/Presentation';
-import BannerCourse from '../components/Home/BannerCourse';
+import Presentation from '../components/Membership/Presentation';
+import BannerCourse from '../components/Membership/BannerCourse';
+import MemberShip from '../components/Membership/MemberShip';
 
 
 const useStyles = makeStyles(theme => ({
@@ -56,16 +57,17 @@ ScrollTop.propTypes = {
   window: PropTypes.func,
 };
 
-export const Home = (props) => {
+
+export const MembershipPage = (props) => {
   return (
     <>
-    <Presentation/>
-    <BannerCourse/>
-
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
+      <Presentation />
+      <BannerCourse />
+      <MemberShip />
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
       <ScrollTop {...props}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />

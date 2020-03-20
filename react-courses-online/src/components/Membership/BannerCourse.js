@@ -45,10 +45,13 @@ const useStyles = makeStyles(theme => ({
     transform: 'translate(-50%,-50%)',
     overflow: 'visible',
   },
-  img:{
-     width: '50%', display: 'block', height: 'auto' 
+  img: {
+    width: '50%',
+    display: 'block',
+    height: 'auto',
   }
 }))
+
 const Logo = () => {
   const classes = useStyles();
 
@@ -63,10 +66,10 @@ const BannerCourse = () => {
   return (
     <section className={classes.container}>
       <div style={{ alignContent: 'center' }}>
-        <h1 className={classes.h1}>Accede a <span style={{position:'relative'}}>todos los cursos <Logo /></span> </h1>
+        <h1 className={classes.h1}>Accede a <span style={{ position: 'relative' }}>todos los cursos <Logo /></span> </h1>
         <p>Tienes +500 cursos para mantenerte actualizado. ¡Cursos nuevos todas las semanas!</p>
       </div>
-      <img className={classes.img}  src="https://miscursosbaratos.com/wp-content/uploads/2020/01/Bruno-sanders.jpg" alt="" srcSet="https://miscursosbaratos.com/wp-content/uploads/2020/01/Bruno-sanders.jpg 653w, https://miscursosbaratos.com/wp-content/uploads/2020/01/Bruno-sanders-300x246.jpg 300w, https://miscursosbaratos.com/wp-content/uploads/2020/01/Bruno-sanders-600x492.jpg 600w" sizes="(max-width: 653px) 100vw, 653w" />
+      <img className={classes.img} src="https://miscursosbaratos.com/wp-content/uploads/2020/01/Bruno-sanders.jpg" alt="" srcSet="https://miscursosbaratos.com/wp-content/uploads/2020/01/Bruno-sanders.jpg 653w, https://miscursosbaratos.com/wp-content/uploads/2020/01/Bruno-sanders-300x246.jpg 300w, https://miscursosbaratos.com/wp-content/uploads/2020/01/Bruno-sanders-600x492.jpg 600w" sizes="(max-width: 653px) 100vw, 653w" />
     </section>
   )
 }

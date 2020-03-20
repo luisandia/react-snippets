@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from './components/Header';
-import { Home } from './pages/Home';
+import { MembershipPage } from './pages/MembershipPage';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -15,6 +15,7 @@ const theme = createMuiTheme({
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
     },
+    secondary:{main:'#4054B2'},
     // secondary: {
     //   light: '#0066ff',
     //   main: '#0044ff',
@@ -34,6 +35,13 @@ const theme = createMuiTheme({
       backgroundColor: 'rgba(0, 0, 0, 0)'
     },
   },
+  typography: {
+    // In Chinese and Japanese the characters are usually larger,
+    // so a smaller fontsize may be appropriate.
+    // fontSize: 14,
+    // htmlFontSize: 10,
+
+  },
   general:{
     highlighted: {
       backgroundColor: 'var(--highlighted)',
@@ -49,7 +57,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <MembershipPage />
           </Route>
         </Switch>
       </Router>
