@@ -9,6 +9,7 @@ import Zoom from '@material-ui/core/Zoom';
 import Presentation from '../components/Membership/Presentation';
 import BannerCourse from '../components/Membership/BannerCourse';
 import MemberShip from '../components/Membership/MemberShip';
+import FrequentlyAsks from '../components/Membership/FrequentlyAsks';
 
 
 const useStyles = makeStyles(theme => ({
@@ -61,9 +62,10 @@ ScrollTop.propTypes = {
 export const MembershipPage = (props) => {
   return (
     <>
-      <Presentation />
+      {/* <Presentation />
       <BannerCourse />
-      <MemberShip />
+      <MemberShip /> */}
+      <FrequentlyAsks />
       <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
       <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
       <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti et neque aut, repudiandae nisi debitis, hic molestias dicta sapiente, vel natus magnam ipsam doloremque quasi fugit quaerat veniam dolorem similique.</div>
